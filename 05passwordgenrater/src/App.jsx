@@ -7,10 +7,10 @@ function App() {
   const [charAllowed, setcharAllowed] = useState(false)
   const [password, setPassword] = useState("")
 
-     //UseRef hook
+  //UseRef hook
   const passwordRef = useRef(null)
 
-  
+
 
   const passwordGenrater = useCallback(() => {
     let pass = ""
@@ -34,12 +34,12 @@ function App() {
   const copyPasswordToClickboard = useCallback(() => {
 
     passwordRef.current?.select();
-    passwordRef.current?.setSelectionRange(0,999);
+    passwordRef.current?.setSelectionRange(0, 999);
     window.navigator.clipboard.writeText(password);
     document.querySelector("button").innerHTML = "copied"
 
-  
-  },[password])
+
+  }, [password])
 
 
   useEffect(() => {
@@ -55,7 +55,7 @@ function App() {
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
           <input type="text"
             value={password}
-            className="outline-none w-full py-1 px-3 " placeholder="password" readOnly ref={passwordRef}/>
+            className="outline-none w-full py-1 px-3 " placeholder="password" readOnly ref={passwordRef} />
 
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={copyPasswordToClickboard} >Copy</button>
         </div>
