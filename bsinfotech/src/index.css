@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+body {
+  @apply bg-primary text-white font-sans overflow-x-hidden;
 }
 
-body {
-  @apply antialiased text-gray-700 bg-gray-50 font-sans;
+/* Glassmorphism Utility Class */
+.glass {
+  @apply bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl;
+}
+
+.glass-card {
+  @apply bg-secondary/50 backdrop-blur-md border border-white/5 hover:border-brand/50 transition-all duration-300;
 }
 
 /* Custom Scrollbar */
@@ -15,12 +22,9 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #0f172a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #3b82f6;
   border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
 }

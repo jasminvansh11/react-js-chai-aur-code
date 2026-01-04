@@ -1,24 +1,29 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+
+// Actual Pages
 import Home from './pages/Home';
-import About from './pages/About';
 import Services from './pages/Services';
-import Contact from './pages/Contact';
+import About from './pages/About';       // <-- Imported
+import Portfolio from './pages/Portfolio'; // <-- Imported
+import Contact from './pages/Contact';     // <-- Imported
 
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen pt-16">
+      <ScrollToTop />
+      <div className="min-h-screen bg-primary text-white selection:bg-brand selection:text-white">
         <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
         <Footer />
       </div>
     </Router>
