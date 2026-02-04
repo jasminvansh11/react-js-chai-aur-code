@@ -1,11 +1,21 @@
-import { StrictMode } from 'react'
+import React, { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App';
 
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
+const ReactElement = React.createElement(
+  'a',
+  {href: "https://google.com"},
+  'Click To Visit Google'
+)
 
-  </StrictMode>,
+const anotherOne = (
+  <a href="https://google.com">Visit Google</a>
+)
+
+createRoot(document.getElementById('root')).render(
+  
+
+    ReactElement
+  
 )
